@@ -25,6 +25,11 @@ const routes = [
     component: () => import("@/views/SignupPage.vue"),
   },
   {
+    path: "/idpassword",
+    name: "idpassword",
+    component: () => import("@/components/login/IdPasswordFind.vue"),
+  },
+  {
     path: "/findroom",
     name: "findroom",
     component: () => import("@/views/FindRoomPage.vue"),

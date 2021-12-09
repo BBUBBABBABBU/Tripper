@@ -18,8 +18,13 @@
       </div>
       <hr class="hr-login" />
       <div class="find-idpassword">
-        <span>아이디, 비밀번호 찾기</span>
-        <span>회원가입</span>
+        <span
+          ><router-link to="/idpassword">
+            아이디, 비밀번호 찾기
+          </router-link></span
+        >
+        |
+        <span><router-link to="/signup"> 회원가입 </router-link></span>
       </div>
     </form>
   </div>
@@ -59,7 +64,7 @@ export default {
   width: 480px;
   opacity: 0.5;
 }
-.find-idpassword {
+.find-idpassword a {
   color: grey;
   opacity: 0.6;
 }

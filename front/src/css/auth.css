@@ -1,0 +1,82 @@
+.id-password-find-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.id-password-find-wrapper h3 {
+  text-align: center;
+}
+
+.id-password-find-wrapper .id-password-find-wrapper-wd {
+  height: 500px;
+  text-align: center;
+  margin: 20px auto;
+  width: 800px;
+  background: white;
+  -webkit-box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 15x 10px;
+  margin: 15px 5px;
+  list-style: none;
+}
+
+.id-password-find-wrapper .id-password-find-wrapper-wd .id-find-form input {
+  font-family: inherit;
+  font-size: 100%;
+  width: 75%;
+  border: 1px solid #dae1e7;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.id-password-find-wrapper .id-password-find-wrapper-wd .id-find-form button {
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  background: lightblue;
+  border-radius: .25rem;
+  border: 0 solid #dae1e7;
+  font-weight: 700;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.id-password-find-wrapper .id-password-find-wrapper-wd .password-find-form input {
+  font-family: inherit;
+  font-size: 100%;
+  width: 75%;
+  border: 1px solid #dae1e7;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.id-password-find-wrapper .id-password-find-wrapper-wd .password-find-form button {
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  background: lightblue;
+  border-radius: .25rem;
+  border: 0 solid #dae1e7;
+  font-weight: 700;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.id-password-find-wrapper .id-password-find-wrapper-wd hr {
+  width: 650px;
+}
+/*# sourceMappingURL=auth.css.map */
