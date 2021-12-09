@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="board-content">
     <WriteBoard></WriteBoard>
   </div>
 </template>

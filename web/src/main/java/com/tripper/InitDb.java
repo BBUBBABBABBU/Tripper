@@ -54,7 +54,7 @@ public class InitDb {
             createBoardDto.setRecruitment(1);
             createBoardDto.setContent("구해요");
 
-            Board board = Board.createBoard(createBoardDto, user);
+            Board board = new Board(createBoardDto, user);
             em.persist(board);
         }
 

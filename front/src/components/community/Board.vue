@@ -5,7 +5,8 @@
         <span class="title">{{ boardItem.title }}</span>
         <span class="destination"> 목적지 : {{ boardItem.destination }}</span>
         <span class="date"
-          >{{ boardItem.startDate }} - {{ boardItem.endDate }}</span
+          >{{ boardItem.startDate | formatDate }} -
+          {{ boardItem.endDate | formatDate }}</span
         >
         <span class="recruitment">인원 수 : {{ boardItem.recrutiment }}</span>
       </div>
@@ -28,7 +29,7 @@ export default {
   methods: {
     boardInfo() {
       this.$router.push({
-        path: "/boardInfo",
+        path: `/board/${this.boardItem.id}`,
         query: { boardItem: this.boardItem },
       });
     },
