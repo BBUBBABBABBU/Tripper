@@ -80,4 +80,148 @@
       -ms-grid-row-align: right;
       align-self: right;
 }
+
+.write-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.write-wrapper h2 {
+  text-align: center;
+}
+
+.write-wrapper .write-board {
+  text-align: center;
+}
+
+.write-wrapper .write-board .write-board-form {
+  margin: 20px 20px;
+  width: 800px;
+  background: white;
+  -webkit-box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 15x 10px;
+  margin: 15px 5px;
+  list-style: none;
+}
+
+.write-wrapper .write-board .write-board-form hr {
+  width: 650px;
+  opacity: 0.6;
+}
+
+.write-wrapper .write-board .write-board-form input {
+  font-family: inherit;
+  font-size: 100%;
+  width: 75%;
+  border: 1px solid #dae1e7;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.write-wrapper .write-board .write-board-form .date input {
+  width: 30%;
+}
+
+.write-wrapper .write-board .write-board-form .board-content input {
+  height: 500px;
+  text-decoration: none;
+}
+
+.write-wrapper .write-board .write-board-form button {
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  background: lightblue;
+  border-radius: .25rem;
+  border: 0 solid #dae1e7;
+  font-weight: 700;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.update-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.update-wrapper h2 {
+  text-align: center;
+}
+
+.update-wrapper .update-board {
+  text-align: center;
+}
+
+.update-wrapper .update-board .update-board-form {
+  margin: 20px 20px;
+  width: 800px;
+  background: white;
+  -webkit-box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 15x 10px;
+  margin: 15px 5px;
+  list-style: none;
+}
+
+.update-wrapper .update-board .update-board-form hr {
+  width: 650px;
+  opacity: 0.6;
+}
+
+.update-wrapper .update-board .update-board-form input {
+  font-family: inherit;
+  font-size: 100%;
+  width: 75%;
+  border: 1px solid #dae1e7;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.update-wrapper .update-board .update-board-form .date input {
+  width: 30%;
+}
+
+.update-wrapper .update-board .update-board-form .board-content input {
+  height: 500px;
+  text-decoration: none;
+}
+
+.update-wrapper .update-board .update-board-form button {
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  background: lightblue;
+  border-radius: .25rem;
+  border: 0 solid #dae1e7;
+  font-weight: 700;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
 /*# sourceMappingURL=community.css.map */

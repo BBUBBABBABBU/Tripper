@@ -4,13 +4,13 @@ function createPost(postData) {
   return instance.post("/board/create", postData);
 }
 function deletePost(postId) {
-  return instance.delete(`/board/post/${postId}/delete`);
+  return instance.get(`/board/post/${postId}/delete`);
 }
 function infoPost(postId) {
   return instance.get(`/board/post/${postId}`);
 }
 function editPost(postData) {
-  return instance.post(`/board/post/${postData.postId}/update`, postData);
+  return instance.post(`/board/post/${postData.id}/update`, postData);
 }
 async function fetchBoardList() {
   const response = await instance.get("/board/list");
@@ -21,7 +21,7 @@ function addLikes(instanceId) {
   return instance.get(`/board/post/${instanceId}/addLikes`);
 }
 function subLikes(instanceId) {
-  return instance.get(`/board/post/${instanceId}/subtrackLikes`);
+  return instance.get(`/board/post/${instanceId}/subtractLikes`);
 }
 export {
   createPost,

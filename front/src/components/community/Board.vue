@@ -4,6 +4,7 @@
       <div class="title-box">
         <span class="title">{{ boardItem.title }}</span> |
         <span class="destination"> 목적지 : {{ boardItem.destination }}</span> |
+
         <span class="recruitment">인원 수 : {{ boardItem.recrutiment }}</span>
       </div>
       <button @click="boardInfo">자세히</button>
@@ -26,7 +27,7 @@ export default {
   methods: {
     boardInfo() {
       this.$router.push({
-        path: "/boardInfo",
+        path: `/board/${this.boardItem.id}`,
         query: { boardItem: this.boardItem },
       });
     },

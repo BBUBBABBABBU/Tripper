@@ -47,8 +47,9 @@ export default {
         password: this.password,
       };
       try {
-        await loginUser(formData);
-        this.$store.state.loginSuccess = true;
+        const { data } = await loginUser(formData);
+        this.$store.dispatch("setToken", data.token);
+        this.$store.dispatch("loginSuccess", data.memId);
         this.$router.push("/community");
       } catch (error) {
         console.log(error);

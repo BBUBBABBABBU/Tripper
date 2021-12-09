@@ -130,6 +130,7 @@ export default {
         console.log(error);
       } finally {
         this.clearAll();
+        this.$router.push("/auth");
       }
     },
     async certEmail() {
