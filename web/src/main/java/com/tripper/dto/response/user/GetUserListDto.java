@@ -7,7 +7,7 @@ import lombok.Getter;
 import java.util.ArrayList;
 import java.util.List;
 
-@ApiModel(value = "회원 리스트 Respose DTO")
+@ApiModel(value = "회원 리스트 Response DTO")
 @Getter
 @AllArgsConstructor
 public class GetUserListDto {

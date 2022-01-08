@@ -1,7 +1,10 @@
 package com.tripper.domain.trip;
 
 import com.tripper.domain.budget.Budget;
+import com.tripper.domain.map.Route;
 import com.tripper.domain.user.User;
+import com.tripper.domain.schedule.Schedule;
+import com.tripper.domain.user.UserInfo;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -32,6 +35,9 @@ public class Trip {
     @OneToOne(mappedBy = "trip")
     private Budget budget;
 
+    @OneToOne(mappedBy = "trip")
+    private Route route;
+
     protected Trip() {}
 
     public Trip(String destination, LocalDate startDate, LocalDate endDate, User user) {
@@ -49,6 +55,10 @@ public class Trip {
 
     public void setBudget(Budget budget){
         this.budget = budget;
+    }
+
+    public void setRoute(Route route){
+        this.route = route;
     }
 
     public void addSchedule(Schedule schedule) {

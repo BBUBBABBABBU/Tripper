@@ -2,7 +2,10 @@
   <div class="container">
     <div class="config">
       <h2>{{ trip.destination }}</h2>
-      <div class="range">{{ trip.start_date }} - {{ trip.end_date }}</div>
+      <div class="range">{{ trip.start_date }} ~ {{ trip.end_date }}</div>
+    </div>
+    <div class="createBtn" @click="pageLink">
+      <div class="border">예산 관리</div>
     </div>
     <div class="list" v-for="list in schedule" :key="list.scheduleal_id">
       <div class="head">
@@ -28,6 +31,7 @@ import CreateSchedule from "@/components/scheduler/CreateSchedule.vue";
 export default {
   data: () => ({
     createStat: false,
+    budgetStat: false,
     trip: {
       destination: "3년만에 떠나는 우정여행 제주도",
       start_date: "2021-11-13",
@@ -60,37 +64,41 @@ export default {
     createTrip() {
       this.createStat = true;
     },
+    pageLink() {
+      this.$router.push({ path: "budget" });
+      //해당 여행의 id 값과 관련해서 함께 푸시
+      //router.push({path:'budget, query:{id:'13234}'});
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .container {
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   height: 100vh;
   .config {
     text-align: center;
-    width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0px auto 40px auto;
     h2 {
       color: #1670aa;
       text-shadow: 2px 2px 2px #a0acbd;
     }
     .range {
-      width: fit-content;
+      width: 100%;
       font-size: 18px;
       font-weight: 700;
-      position: relative;
-      left: 550px;
-      margin-bottom: 20px;
+      float: right;
+      margin-bottom: 40px;
     }
   }
   .list {
-    width: 800px;
+    width: 100%;
     display: flex;
     background: #7dbeff;
-    margin: 0px auto 20px auto;
+    margin: 20px auto 20px auto;
     padding: 10px 10px;
     border-radius: 25px;
 
@@ -156,6 +164,36 @@ export default {
         position: relative;
         bottom: 3px;
       }
+    }
+  }
+  .createBtn {
+    width: 120px;
+    height: 60px;
+    display: flex;
+    position: absolute;
+    right: 60px;
+    top: 130px;
+    justify-content: center;
+    align-items: center;
+    background: #7dbeff;
+    border-radius: 10px;
+    color: #fff;
+    float: right;
+    z-index: 1;
+    &:hover {
+      cursor: pointer;
+      background: #f99ec0;
+      box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.3);
+      position: absolute;
+      bottom: 1px;
+    }
+    .border {
+      border-radius: 7px;
+      width: 80px;
+      border: 3px solid #fff;
+      padding: 10px 10px;
+      font-weight: 700;
+      text-align: center;
     }
   }
 }

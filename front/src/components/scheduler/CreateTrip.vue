@@ -5,9 +5,9 @@
       <input
         class="elInput"
         type="text"
-        id="title"
+        id="destination"
         placeholder="여행제목"
-        v-model="trip.title"
+        v-model="trip.destination"
       />
       <date-picker
         class="elPicker"
@@ -16,13 +16,13 @@
         range
         placeholder="여행기간"
       ></date-picker>
-      <textarea
+      <!-- <textarea
         class="elArea elInput"
         type=""
         id="memo"
         placeholder="자유롭게 메모를 작성해보세요 :)"
         v-model="trip.memo"
-      />
+      /> -->
       <button class="btn" type="submit" @click="create">생성하기</button>
     </div>
   </drag-it-dude>
@@ -32,13 +32,14 @@
 import DragItDude from "vue-drag-it-dude";
 import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
+import { createTrip } from "@/api/trip.js";
+import store from "@/store/index.js";
 export default {
   data: () => ({
+    memId: store.getters["getMemId"],
     trip: {
-      title: "",
-      startDate: "",
-      endDate: "",
-      memo: "",
+      destination: "",
+      datePicker: "",
     },
   }),
   components: {
@@ -46,8 +47,19 @@ export default {
     DatePicker,
   },
   methods: {
-    create() {
+    async create() {
+      console.log(this.trip.destination);
       //데이터 전송
+      const tripData = {
+        destination: this.trip.destination,
+        start_time: this.trip.datePicker[0],
+        end_time: this.trip.datePicker[1],
+      };
+      try {
+        await createTrip(tripData, this.memId);
+      } catch (err) {
+        console.log(err);
+      }
       this.$emit("changeCreateStat", false);
     },
   },

@@ -79,10 +79,23 @@ const routes = [
   {
     path: "/scheduler",
     component: () => import("@/views/SchedulerPage.vue"),
+    meta: {
+      auth: true,
+    },
   },
   {
     path: "/schedule-list",
     component: () => import("@/components/scheduler/ScheduleList.vue"),
+    meta: {
+      auth: true,
+    },
+  },
+  {
+    path: "/budget",
+    component: () => import("@/components/budget/BudgetPage.vue"),
+    meta: {
+      auth: true,
+    },
   },
   {
     path: "/board/:id",

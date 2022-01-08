@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" @click="pageLink">
     <div class="tripList" v-for="(trip, index) in trips" :key="index">
       <div class="border">
         <div class="context">
@@ -12,21 +12,32 @@
 </template>
 
 <script>
+import store from "@/store/index.js";
+import { tripList } from "@/api/trip.js";
 export default {
+  created() {
+    this.fetctTrips;
+  },
   data: () => ({
-    trips: [
-      { title: "우정여행 제주도", memo: "3년만에 떠나는 우정여행" },
-      { title: "부산", memo: "한번도 못가본거 실화냐?" },
-      { title: "울산", memo: "회 파나,,?" },
-    ],
+    memId: store.getters["getMemId"],
+    trips: "",
   }),
+  methods: {
+    async fetctTrips() {
+      this.trips = await tripList(this.memId);
+    },
+    pageLink() {
+      this.$router.push({ path: "schedule-list" });
+      //해당 여행의 id 값과 관련해서 함께 푸시
+      //router.push({path:'schedule-list', query:{id:'13234}'});
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .container {
   width: 100%;
-  height: fit-content;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -50,7 +61,7 @@ export default {
     background: #dae8e6;
     padding: 10px 10px;
     text-align: center;
-    //background-image: url("");
+    background-image: url("C:/Tripper/front/src/assets/jeju.jpg");
     background-size: cover;
   }
   &:hover {

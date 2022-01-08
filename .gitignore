@@ -192,5 +192,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,intellij,java
+
+# api키 등 저장돼있는 설정파일
+web/src/main/resources/private.yml
 web/src/main/resources/application.yml

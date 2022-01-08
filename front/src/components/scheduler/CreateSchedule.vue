@@ -21,13 +21,13 @@
         type="datetime"
         placeholder="종료시간"
       ></date-picker>
-      <textarea
+      <!-- <textarea
         class="elArea elInput"
         type=""
         id="memo"
         placeholder="자유롭게 내용을 작성해보세요 :)"
         v-model="list.content"
-      />
+      /> -->
       <button class="btn" type="submit" @click="create">생성하기</button>
     </div>
   </drag-it-dude>
@@ -37,13 +37,13 @@
 import DragItDude from "vue-drag-it-dude";
 import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
+import { createTrip } from "@/api/trip.js";
 export default {
   data: () => ({
     list: {
       name: "",
       start_time: "",
       end_time: "",
-      content: "",
     },
   }),
   components: {
@@ -51,8 +51,18 @@ export default {
     DatePicker,
   },
   methods: {
-    create() {
+    async create() {
       //데이터 전송
+      const tripData = {
+        name: this.list.name,
+        start_time: this.list.start_time,
+        end_time: this.list.end_time,
+      };
+      try {
+        await createTrip(tripData);
+      } catch (err) {
+        console.log(err);
+      }
       this.$emit("changeCreateStat", false);
     },
   },

@@ -5,6 +5,7 @@ import store from "@/store/index";
 import DatePicker from "v-calendar/lib/components/date-picker.umd";
 import DragItDude from "vue-drag-it-dude";
 import VueDaumPostcode from "vue-daum-postcode";
+
 import { formatDate } from "@/utils/filters";
 
 Vue.filter("formatDate", formatDate);

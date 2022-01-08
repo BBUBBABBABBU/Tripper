@@ -16,6 +16,7 @@
 <script>
 import TripList from "@/components/scheduler/TripList.vue";
 import CreateTrip from "@/components/scheduler/CreateTrip.vue";
+import store from "@/store/index.js";
 
 export default {
   components: {
@@ -24,6 +25,7 @@ export default {
   },
   data: () => ({
     createStat: false,
+    memId: store.getters["getMemId"],
   }),
   methods: {
     changeCreateStat(val) {
