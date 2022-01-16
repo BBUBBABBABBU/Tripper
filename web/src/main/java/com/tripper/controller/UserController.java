@@ -5,7 +5,6 @@ import com.tripper.domain.user.Role;
 import com.tripper.domain.user.User;
 import com.tripper.dto.request.user.*;
 import com.tripper.dto.response.user.GetLoginUserDto;
-import com.tripper.dto.response.user.GetUserListDto;
 import com.tripper.service.EmailService;
 import com.tripper.service.JwtUserDetailsService;
 import com.tripper.service.UserService;

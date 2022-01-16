@@ -5,6 +5,7 @@ import com.tripper.dto.request.hotel.CreateHotelDto;
 import com.tripper.dto.request.hotel.CreateRoomDto;
 import com.tripper.dto.request.hotel.UpdateHotelDto;
 import com.tripper.dto.request.hotel.UpdateRoomDto;
+import com.tripper.dto.response.hotel.GetHotelListDto;
 import com.tripper.dto.response.hotel.GetReservationListDto;
 import com.tripper.dto.response.user.GetUserListDto;
 import com.tripper.service.HotelService;
@@ -90,6 +91,17 @@ public class AdminController {
 
         hotelService.deleteHotelById(hotelId);
         return ResponseEntity.ok().build();
+
+    }
+
+    @ApiOperation(
+            value = "매니저가 등록한 호텔 조회"
+            , notes = "매니저가 등록한 호텔 목록을 조회한다.")
+    @GetMapping("/hotels")
+    public ResponseEntity<GetHotelListDto> getManagerHotelList(Principal principal) {
+
+        GetHotelListDto hotels = hotelService.findManagersHotel(principal.getName());
+        return ResponseEntity.ok().body(hotels);
 
     }
 

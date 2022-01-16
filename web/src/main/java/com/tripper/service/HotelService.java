@@ -33,7 +33,7 @@ public class HotelService {
     private final RoomRepository roomRepository;
     private final RoomTypeRepository roomTypeRepository;
     private final FileHandler fileHandler;
-    
+
     /**
      * 호텔 등록
      */
@@ -112,6 +112,34 @@ public class HotelService {
     public GetHotelListDto findAllHotels() {
 
         List<Hotel> hotels = hotelRepository.findAll();
+        List<GetHotelDto> getHotelDtos = new ArrayList<>();
+
+        for (Hotel hotel : hotels) {
+
+            Long id = hotel.getId();
+            String name = hotel.getName();
+            String address = hotel.getAddress();
+
+            List<Photo> photoList = photoRepository.findByHotel_Id(id);
+            GetPhotoListDto getPhotoListDto = setPhotoListDto(photoList);
+
+            List<RoomType> roomTypeList = hotel.getRoomTypes();
+            GetRoomListDto getRoomListDto = setRoomListDto(roomTypeList);
+
+            GetHotelDto getHotelDto = new GetHotelDto(id, name, address, getPhotoListDto, getRoomListDto);
+            getHotelDtos.add(getHotelDto);
+        }
+        int total = getHotelDtos.size();
+
+        return new GetHotelListDto(getHotelDtos, total);
+    }
+
+    /**
+     * 호텔 매니저가 등록한 호텔들만 조회
+     */
+    public GetHotelListDto findManagersHotel(String memId) {
+
+        List<Hotel> hotels = hotelRepository.findHotelByUser_MemId(memId);
         List<GetHotelDto> getHotelDtos = new ArrayList<>();
 
         for (Hotel hotel : hotels) {

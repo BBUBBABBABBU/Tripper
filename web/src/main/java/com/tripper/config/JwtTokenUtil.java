@@ -28,8 +28,6 @@ public class JwtTokenUtil implements Serializable {
 
     /**
      * jwt token으로부터 username을 가져오는 함수
-     * @param token
-     * @return
      */
     public String getUsernameFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);
@@ -37,8 +35,6 @@ public class JwtTokenUtil implements Serializable {
 
     /**
      * jwt token으로부터 만료일자를 알려주는 함수
-     * @param token
-     * @return
      */
     public Date getExpirationDateFromToken(String token) {
         return getClaimFromToken(token, Claims::getExpiration);
@@ -51,8 +47,6 @@ public class JwtTokenUtil implements Serializable {
 
     /**
      * 토큰에서 정보 검색하려면 secret key 필요
-     * @param token
-     * @return
      */
     private Claims getAllClaimsFromToken(String token) {
         return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
@@ -60,8 +54,6 @@ public class JwtTokenUtil implements Serializable {
 
     /**
      * 토큰이 만료되었는지 확인하는 함수
-     * @param token
-     * @return
      */
     private Boolean isTokenExpired(String token) {
         final Date expiration = getExpirationDateFromToken(token);
@@ -70,8 +62,6 @@ public class JwtTokenUtil implements Serializable {
 
     /**
      * 유저를 위한 토큰을 발급해주는 함수
-     * @param userDetails
-     * @return
      */
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
@@ -84,9 +74,6 @@ public class JwtTokenUtil implements Serializable {
      * 2. HS512 알고리즘과 비밀키를 사용하여 JWT에 서명
      * 3. JWS 압축 직렬화에 따름
      * 4. URL 안전 문자열에 대한 JWT 압축
-     * @param claims
-     * @param subject
-     * @return
      */
     private String doGenerateToken(Map<String, Object> claims, String subject) {
 
@@ -97,9 +84,6 @@ public class JwtTokenUtil implements Serializable {
 
     /**
      * 토큰 인증하는 함수
-     * @param token
-     * @param userDetails
-     * @return
      */
     public Boolean validateToken(String token, UserDetails userDetails) {
         final String username = getUsernameFromToken(token);
