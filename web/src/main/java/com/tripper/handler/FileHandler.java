@@ -2,7 +2,6 @@ package com.tripper.handler;
 
 import com.tripper.domain.Photo;
 import com.tripper.dto.request.CreatePhotoDto;
-import com.tripper.service.PhotoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
@@ -18,8 +17,6 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 public class FileHandler {
-
-//    private final PhotoService photoService;
 
     public List<Photo> parseFileInfo(List<MultipartFile> multipartFiles) throws Exception {
 

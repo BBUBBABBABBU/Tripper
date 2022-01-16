@@ -1,13 +1,9 @@
 package com.tripper.repository;
 
 import com.tripper.domain.user.User;
-import com.tripper.dto.response.user.GetUserListDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
-
-import java.util.List;
 import java.util.Optional;
 
 /**

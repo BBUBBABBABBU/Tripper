@@ -2,7 +2,6 @@ package com.tripper;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @EnableJpaAuditing
@@ -15,6 +14,5 @@ public class WebBootApplication {
 
     public static void main(String[] args) {
         new SpringApplicationBuilder(WebBootApplication.class).properties(APPLICATION_PROPERTIES).run(args);
-//    SpringApplication.run(WebBootApplication.class, args);
     }
 }

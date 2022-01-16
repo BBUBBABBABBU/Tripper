@@ -17,7 +17,7 @@ public class EmailService {
 
     private final UserRepository userRepository;
     private JavaMailSender mailSender;
-    private static final String FROM_ADDRESS = "testacc0unt.jy@gmail.com";
+    private static final String FROM_ADDRESS = "tripper.mailservice@gmail.com";
 
     /**
      * 전송할 메일 생성 + 이메일 인증코드 저장 하는 함수
@@ -59,7 +59,7 @@ public class EmailService {
 
         String str = "";
 
-        int idx = 0;
+        int idx;
         for (int i = 0; i < 10; i++) {
             idx = (int) (charSet.length * Math.random());
             str += charSet[idx];
@@ -79,7 +79,6 @@ public class EmailService {
         message.setFrom(EmailService.FROM_ADDRESS);
         message.setSubject(createEmailDto.getTitle());
         message.setText(createEmailDto.getMessage());
-        log.info("이메일 전송 완료");
 
         mailSender.send(message);
 
